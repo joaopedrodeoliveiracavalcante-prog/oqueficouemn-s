@@ -392,12 +392,33 @@ a{color:inherit}
 .refbtn span{font-size:22px;transition:transform .3s}
 .refbtn.open span{transform:rotate(45deg)}
 @media(max-width:700px){.grid4.tiles{grid-template-columns:1fr 1fr}.qcar{padding:26px 20px 18px}}
+
+.cover{background:var(--dark);color:#fff;padding:64px var(--gx) 56px;position:relative;overflow:hidden}
+.cover::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 10%,#6f6f4566,transparent 70%)}
+.cover>*{position:relative}
+.cover .k{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--yellow);color:var(--dark);border-radius:99px;padding:6px 14px}
+.cover h1{font-size:clamp(48px,9vw,120px);line-height:.92;letter-spacing:-.05em;font-weight:600;color:var(--yellow);margin:26px 0 8px}
+.cover .sub{font-size:clamp(16px,2vw,22px);color:#ffffffcc;margin:0 0 34px;max-width:700px}
+.cover .q{border-left:4px solid var(--yellow);padding:6px 0 6px 20px;max-width:760px}
+.cover .q small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ffffff99;margin-bottom:8px}
+.cover .q p{margin:0;font-size:clamp(18px,2.4vw,26px);line-height:1.25;letter-spacing:-.02em;font-weight:600}
+.cover .au{margin-top:34px;font-size:15px;line-height:1.5}
+.cover .au b{display:block;font-size:20px;letter-spacing:-.02em}
+.cover .au span{color:#ffffffaa}
 </style>
 </head>
 <body>
 <div class="progress" id="prog"></div>
 <div class="page">
 
+
+<section class="cover" id="capa">
+  <span class="k">Pesquisa para TCC</span>
+  <h1>O que ficou<br>em nós</h1>
+  <p class="sub">Série documental vertical sobre as matriarcas de uma família.</p>
+  <div class="q"><small>Pergunta norteadora</small><p>Como a memória compartilhada de uma matriarca ausente molda e revela a identidade das mulheres de sua família?</p></div>
+  <div class="au"><b>João Pedro de Oliveira Cavalcante</b><span>Publicidade e Propaganda · CEUB</span></div>
+</section>
 
 <!-- PESQUISA SOBRE O FORMATO VERTICAL -->
 <section class="rs-intro" id="pesquisa">
