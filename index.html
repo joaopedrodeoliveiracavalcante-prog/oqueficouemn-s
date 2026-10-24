@@ -336,6 +336,13 @@ a{color:inherit}
 
 .hero .photo::after{white-space:nowrap;left:auto}
 @media(min-width:1001px){.hero h1{font-size:min(15vw,calc((100vw - 2*var(--gx))/4.75))}}
+
+.sil3d{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;cursor:grab;touch-action:pan-y}
+.sil3d:active{cursor:grabbing}
+.hero3d{inset:auto;right:var(--gx);bottom:0;top:96px;width:min(40vw,520px);height:calc(100% - 96px);z-index:1;cursor:grab;touch-action:pan-y}
+.hero .inner{z-index:2}
+.asp-hint{position:absolute;right:12px;top:10px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#ffffffaa;z-index:3;pointer-events:none}
+@media(max-width:700px){.hero3d{width:60vw;opacity:.9}}
 </style>
 </head>
 <body>
@@ -377,9 +384,9 @@ a{color:inherit}
         <rect x="40" y="50" width="130" height="150" rx="6" fill="#bfe3ee"/><path d="M105 50v150M40 125h130" stroke="#8a7a3d" stroke-width="6"/>
         <rect x="455" y="70" width="110" height="130" rx="4" fill="#6f6f45"/><rect x="467" y="82" width="86" height="106" fill="#e8e6dc"/><circle cx="510" cy="122" r="16" fill="#b1ab80"/><path d="M482 186c0-26 12-40 28-40s28 14 28 40z" fill="#b1ab80"/>
         <rect x="500" y="228" width="26" height="22" rx="3" fill="#f6f08c"/><rect x="560" y="236" width="50" height="14" rx="3" fill="#6f6f45"/>
-        <circle cx="320" cy="150" r="46" fill="#7c5f3d"/><path d="M230 360c0-76 40-118 90-118s90 42 90 118z" fill="#2b2818"/>
-        <circle cx="304" cy="146" r="4" fill="#2b2818"/><circle cx="336" cy="146" r="4" fill="#2b2818"/><path d="M304 170q16 10 32 0" stroke="#2b2818" stroke-width="3" fill="none" stroke-linecap="round"/>
-      </svg>
+              </svg>
+      <canvas class="sil3d" id="silDemo" aria-label="Silhueta em 3D, arraste para girar"></canvas>
+      <div class="asp-hint">arraste · gire em 3D</div>
       <div class="asp-lab" id="aspLab">16:9 · horizontal</div>
     </div></div>
     <div class="asp-ctl">
@@ -453,6 +460,9 @@ a{color:inherit}
 <section class="white" id="p-links">
   <div class="h2">Para assistir, ler e conferir.<span class="r">Links da pesquisa</span></div>
   <div class="lk-grid">
+     <a class="lk" href="https://www.youtube.com/watch?v=1iNCKmn_tlY" target="_blank" rel="noopener" style="border-color:var(--olive);border-width:2px"><small>▶ Vídeo · explica o fenômeno</small><b>O público quer vídeos rápidos ou histórias longas?</b><span>CNN Brasil, 3 min 29 s. Painel do Rio2C sobre séries e novelas verticais, com episódios curtos e ganchos pensados para o celular.</span></a>
+     <a class="lk" href="https://www.itatiaia.com.br/entretenimento/globo-grava-novela-vertical-com-jade-picon-apos-sucesso-de-a-vida-secreta-do-meu-marido-bilionario/" target="_blank" rel="noopener" style="border-color:var(--olive);border-width:2px"><small>★ Case famoso · Brasil</small><b>A vida secreta do meu marido bilionário</b><span>Primeira novela vertical brasileira, no ReelShort: 68 episódios de cerca de 1 minuto e maior sucesso do app em junho de 2025. O caso levou a Globo a gravar a sua própria novela vertical.</span></a>
+     <a class="lk" href="https://www.youtube.com/watch?v=xC4QplW0QT4" target="_blank" rel="noopener" style="border-color:var(--olive);border-width:2px"><small>▶ Vídeo · assista ao case</small><b>A vida secreta do meu marido bilionário (ReelShort Brasil)</b><span>Episódios no canal Reelshort Brasil, no YouTube, para ver como é a linguagem na prática.</span></a>
     <a class="lk" href="https://www.poder360.com.br/midia/filmes-na-vertical-sao-o-presente-nao-o-futuro-diz-diretor/" target="_blank" rel="noopener"><small>Série documental · reportagem</small><b>Série documental inova com formato vertical para celulares</b><span>Poder360, 3 nov. 2022. Entrevistas com os diretores de Seleção de Estrelas.</span></a>
     <a class="lk" href="https://canaltech.com.br/redes-sociais/selecao-brasileira-ganha-serie-documental-no-kwai-227626/" target="_blank" rel="noopener"><small>Série documental · lançamento</small><b>Seleção Brasileira ganha série documental no Kwai</b><span>Canaltech. A série pode ser vista no aplicativo do Kwai.</span></a>
     <a class="lk" href="https://www.lance.com.br/selecao-brasileira/cbf-lanca-documentario-em-serie-com-jogadores-da-selecao-brasileira.html" target="_blank" rel="noopener"><small>Série documental · CBF</small><b>CBF lança documentário em série com jogadores da Seleção</b><span>Lance!. Cobertura do lançamento da série.</span></a>
@@ -514,6 +524,7 @@ a{color:inherit}
     <nav><a href="#pesquisa">Pesquisa</a><a href="#serie">Episódios</a><a href="#cronograma">Cronograma</a><a href="#sobre">Sobre o filme</a><a href="#pessoas">Pessoas</a><a class="btn" href="#estrutura">Estrutura</a></nav>
   </div>
   <div class="photo"></div>
+  <canvas class="sil3d hero3d" id="silHero" aria-hidden="true"></canvas>
   <div class="inner">
     <p class="small">Um documentário sobre quatro mulheres de uma mesma família e a que já não está.</p>
     <h1>O que ficou<br>em nós</h1>
@@ -850,6 +861,60 @@ a{color:inherit}
       c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transition='transform .1s';c.style.transform='perspective(700px) rotateX('+(-y*7)+'deg) rotateY('+(x*9)+'deg) translateY(-4px)'});
       c.addEventListener('mouseleave',function(){c.style.transition='';c.style.transform=''})});
   }
+})();
+
+/* 3D: silhueta preta */
+(function(){
+  function boot(){
+    if(!window.THREE)return;var T=THREE;
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function bust(){
+      var g=new T.Group(),mat=new T.MeshStandardMaterial({color:0x0b0a06,roughness:.38,metalness:.15});
+      var head=new T.Mesh(new T.SphereGeometry(.52,48,36),mat);head.scale.set(.92,1.08,.95);head.position.y=1.48;g.add(head);
+      var neck=new T.Mesh(new T.CylinderGeometry(.19,.24,.5,24),mat);neck.position.y=.95;g.add(neck);
+      var pts=[];for(var i=0;i<=24;i++){var a=i/24*Math.PI/2;pts.push(new T.Vector2(Math.cos(a)*1.15+.001,Math.sin(a)*.85+.0))}
+      pts.reverse();pts.push(new T.Vector2(1.15,-4));pts.push(new T.Vector2(0,-4));
+      var body=new T.Mesh(new T.LatheGeometry(pts.map(function(p){return new T.Vector2(p.x,p.y)}),48),mat);
+      body.scale.z=.55;body.position.y=.12;g.add(body);
+      return g;
+    }
+    function scene(cv,opt){
+      var r=new T.WebGLRenderer({canvas:cv,alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio||1,2));
+      var sc=new T.Scene(),cam=new T.PerspectiveCamera(32,1,.1,50);
+      sc.add(new T.AmbientLight(0xffffff,.55));
+      var k=new T.DirectionalLight(0xffffff,.9);k.position.set(2,3,4);sc.add(k);
+      var rim=new T.DirectionalLight(0xf6f08c,1.6);rim.position.set(-3,2,-2.5);sc.add(rim);
+      var rim2=new T.DirectionalLight(0xb9b98a,.9);rim2.position.set(3,1,-3);sc.add(rim2);
+      var m=bust();sc.add(m);
+      var extra=[];
+      if(opt.shapes){
+        var cols=[0xf6f08c,0x6f6f45,0xe8e6dc];
+        [[-2.6,1.6,-1,'ring'],[2.5,2.2,-2,'ico'],[-2.2,-.6,0,'ico'],[2.8,.2,-1,'ring'],[-1.4,2.7,-2,'ring']].forEach(function(d,i){
+          var geo=d[3]==='ring'?new T.TorusGeometry(.38,.07,16,48):new T.IcosahedronGeometry(.32,0);
+          var o=new T.Mesh(geo,new T.MeshStandardMaterial({color:cols[i%3],roughness:.35,metalness:.25}));
+          o.position.set(d[0],d[1],d[2]);o.userData={s:.4+i*.13,b:d[1],p:i};sc.add(o);extra.push(o)});
+      }
+      var ry=opt.ry||0,vy=0,drag=false,lx=0,tx=0,ty=0,auto=!reduce,t0=performance.now();
+      function size(){var w=cv.clientWidth||300,h=cv.clientHeight||300;r.setSize(w,h,false);cam.aspect=w/h;
+        var need=Math.max(opt.h||2.15,(opt.w||1.5)/cam.aspect);var d=need/Math.tan(cam.fov*Math.PI/360);
+        cam.position.set(0,opt.cy||.7,d);cam.lookAt(0,opt.cy||.7,0);cam.updateProjectionMatrix()}
+      new ResizeObserver(size).observe(cv);size();
+      cv.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX;vy=0;try{cv.setPointerCapture(e.pointerId)}catch(_){}});
+      cv.addEventListener('pointermove',function(e){if(drag){vy=(e.clientX-lx)*.012;ry+=vy;lx=e.clientX}});
+      ['pointerup','pointercancel'].forEach(function(n){cv.addEventListener(n,function(){drag=false})});
+      addEventListener('pointermove',function(e){tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5)},{passive:true});
+      var vis=true;new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(cv);
+      (function loop(){requestAnimationFrame(loop);if(!vis)return;
+        var t=(performance.now()-t0)/1000;
+        if(!drag){if(auto)ry+=.006;ry+=vy;vy*=.94}
+        m.rotation.y=ry+tx*.5;m.rotation.x=ty*.12;m.position.y=Math.sin(t*1.2)*.03;
+        extra.forEach(function(o){o.rotation.x+=.008*o.userData.s*2;o.rotation.y+=.011;o.position.y=o.userData.b+Math.sin(t*o.userData.s+o.userData.p)*.18;o.position.x+=tx*.0008});
+        r.render(sc,cam)})();
+    }
+    var a=document.getElementById('silDemo');if(a)scene(a,{h:2.0,w:1.45,cy:.55,ry:.5});
+    var b=document.getElementById('silHero');if(b)scene(b,{h:2.6,w:3.0,cy:.75,ry:-.4,shapes:true});
+  }
+  var sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';sc.onload=boot;document.head.appendChild(sc);
 })();
 </script>
 </body>
