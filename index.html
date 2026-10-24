@@ -434,6 +434,26 @@ img,svg,canvas{-webkit-user-drag:none}
   .hero{min-height:560px}
   .hero h1{font-size:clamp(56px,18vw,110px)}
 }
+
+.case{background:var(--stone);padding:64px var(--gx)}
+.case .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.case h2{font-size:clamp(30px,5vw,56px);letter-spacing:-.04em;line-height:1;margin:10px 0 26px;font-weight:600;max-width:820px}
+.case-top{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.case-big{background:var(--dark);color:var(--yellow);border-radius:10px;padding:26px}
+.case-big b{display:block;font-size:clamp(54px,9vw,104px);letter-spacing:-.05em;line-height:.9;font-weight:600}
+.case-big span{display:block;font-size:13px;color:#ffffffb0;margin-top:10px;line-height:1.4}
+.case-eps{display:grid;grid-template-columns:repeat(17,1fr);gap:4px;align-content:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+.case-eps i{aspect-ratio:9/16;background:var(--olive);border-radius:3px;opacity:.25;transition:opacity .25s,transform .25s}
+.case-eps.in i{opacity:1}
+.case-eps small{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:8px}
+.case-steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.case-steps button{font:600 13px inherit;font-family:inherit;border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 16px;min-height:44px;cursor:pointer;color:var(--ink)}
+.case-steps button.on{background:var(--olive);color:#fff;border-color:var(--olive)}
+.case-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;min-height:150px}
+.case-panel h3{margin:0 0 8px;font-size:22px;letter-spacing:-.03em}
+.case-panel p{margin:0;font-size:15px;line-height:1.5;color:#3a3826;max-width:720px}
+.case-panel .go{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;background:var(--yellow);color:var(--dark);border-radius:99px;padding:8px 16px;text-decoration:none;margin-right:8px}
+@media(max-width:760px){.case{padding:44px var(--gx)}.case-top{grid-template-columns:1fr}.case-eps{grid-template-columns:repeat(12,1fr)}}
 </style>
 </head>
 <body>
@@ -449,6 +469,17 @@ img,svg,canvas{-webkit-user-drag:none}
   <div class="au"><b>João Pedro de Oliveira Cavalcante</b><span>Publicidade e Propaganda · CEUB</span></div>
 </section>
 
+<section class="case" id="p-case">
+  <div class="k">Comece por um caso</div>
+  <h2>Um app, 68 episódios de 1 minuto e a primeira novela vertical brasileira.</h2>
+  <div class="case-top">
+    <div class="case-big"><b data-n="423">423 mi</b><span>visualizações de “A vida secreta do meu marido bilionário” (ReelShort), segundo as reportagens consultadas</span></div>
+    <div class="case-eps" id="caseEps"><small>68 episódios de cerca de 1 minuto cada. Cada retângulo é um episódio em 9:16.</small></div>
+  </div>
+  <div class="case-steps" id="caseSteps" role="tablist"></div>
+  <div class="case-panel" id="casePanel"></div>
+</section>
+
 <!-- PESQUISA SOBRE O FORMATO VERTICAL -->
 <section class="rs-intro" id="pesquisa">
   <div class="tag">A PESQUISA · ANTES DO FILME</div>
@@ -459,7 +490,7 @@ img,svg,canvas{-webkit-user-drag:none}
     <div><b>US$ 11 bi</b><span>receita global dos dramas curtos em 2025 (Omdia)</span></div>
     <div><b>64 mi</b><span>views de uma série documental vertical no Brasil em 3 semanas</span></div>
   </div>
-  <div class="rs-nav"><a href="#p-formato">O formato</a><a href="#p-numeros">Números</a><a href="#p-origem">Origem e Brasil</a><a href="#p-doc">Documentário vertical</a><a href="#p-links">Links</a><a href="#p-fontes">Frases das fontes</a><a href="#p-porque">Por que 9:16</a><a href="#p-refs">Referências</a><a href="#cronograma">Cronograma</a></div>
+  <div class="rs-nav"><a href="#p-case">O case</a><a href="#p-formato">O formato</a><a href="#p-numeros">Números</a><a href="#p-origem">Origem e Brasil</a><a href="#p-doc">Documentário vertical</a><a href="#p-links">Links</a><a href="#p-fontes">Frases das fontes</a><a href="#p-porque">Por que 9:16</a><a href="#p-refs">Referências</a><a href="#cronograma">Cronograma</a></div>
 </section>
 
 <section class="white" id="p-formato">
@@ -1088,6 +1119,25 @@ img,svg,canvas{-webkit-user-drag:none}
     rb.innerHTML='Ver as '+$$('p',rf).length+' referências (ABNT)<span>+</span>';rf.style.display='none';
     rb.onclick=function(){rb.classList.toggle('open');rf.style.display=rb.classList.contains('open')?'block':'none'};
     rf.parentNode.insertBefore(rb,rf)}
+})();
+
+(function(){
+  var st=[
+   {t:'1 · O caso',h:'A primeira novela vertical brasileira de destaque',p:'Lançada no ReelShort, “A vida secreta do meu marido bilionário” tem 68 episódios de cerca de 1 minuto, classificação de 16 anos e foi o maior sucesso do app em junho de 2025. Sem anúncios, o app cobra R$ 12,90. Também dá para ver de graça, trocando por anúncios.',l:[['Ler a reportagem','https://www.itatiaia.com.br/entretenimento/globo-grava-novela-vertical-com-jade-picon-apos-sucesso-de-a-vida-secreta-do-meu-marido-bilionario/'],['Ver no YouTube','https://www.youtube.com/watch?v=xC4QplW0QT4']]},
+   {t:'2 · A reação',h:'A TV aberta entra no formato',p:'Depois do sucesso, a Globo gravou uma novela vertical com Jade Picon. O que era um produto de aplicativo passou a ser estratégia de emissora, e hoje o Globoplay lança em média um microdrama por mês.',l:[['Ler a reportagem','https://www.itatiaia.com.br/entretenimento/globo-grava-novela-vertical-com-jade-picon-apos-sucesso-de-a-vida-secreta-do-meu-marido-bilionario/']]},
+   {t:'3 · O fenômeno',h:'Um mercado global',p:'A Omdia estima US$ 11 bilhões de receita global dos dramas curtos em 2025, com projeções até US$ 26 bilhões em 2030 (Variety e RADII). As estimativas variam porque cada consultoria define “mercado” de um jeito.',l:[['Relatório da Omdia','https://omdia.tech.informa.com/om139375/microdramas-to-generate-%2411bn-in-global-revenue-in-2025']]},
+   {t:'4 · E o documentário?',h:'Não é só ficção',p:'Em 2022, a série documental vertical “Seleção de Estrelas” (Kwai e CBF) passou de 64 milhões de visualizações em 3 semanas. Se a vertical funciona para ficção e para documentário esportivo, resta testar com memória familiar.',l:[['Ler no Poder360','https://www.poder360.com.br/midia/filmes-na-vertical-sao-o-presente-nao-o-futuro-diz-diretor/']]},
+   {t:'5 · Por que importa',h:'A base do nosso projeto',p:'O rosto e o gesto em primeiro plano, o episódio curto e o celular como tela de quem é da geração dos netos pedem o 9:16. As próximas seções mostram o formato, os números, as fontes e os documentários na vertical.',l:[['Ir ao formato','#p-formato']]}
+  ];
+  var bx=document.getElementById('caseSteps'),pn=document.getElementById('casePanel'),eps=document.getElementById('caseEps');
+  if(!bx)return;
+  for(var i=0;i<68;i++){var e=document.createElement('i');e.style.transitionDelay=(i*14)+'ms';eps.insertBefore(e,eps.lastElementChild)}
+  new IntersectionObserver(function(es,o){if(es[0].isIntersecting){eps.classList.add('in');o.disconnect()}},{threshold:.4}).observe(eps);
+  function go(i){[].forEach.call(bx.children,function(b,j){b.classList.toggle('on',j===i);b.setAttribute('aria-selected',j===i)});
+    var d=st[i];pn.innerHTML='<h3></h3><p></p><div></div>';pn.firstChild.textContent=d.h;pn.children[1].textContent=d.p;
+    d.l.forEach(function(x){var a=document.createElement('a');a.className='go';a.textContent=x[0]+(x[1][0]==='#'?' ↓':' ↗');a.href=x[1];if(x[1][0]!=='#'){a.target='_blank';a.rel='noopener'}pn.children[2].appendChild(a)})}
+  st.forEach(function(d,i){var b=document.createElement('button');b.textContent=d.t;b.type='button';b.setAttribute('role','tab');b.onclick=function(){go(i)};bx.appendChild(b)});
+  go(0);
 })();
 </script>
 </body>
