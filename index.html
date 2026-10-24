@@ -454,6 +454,17 @@ img,svg,canvas{-webkit-user-drag:none}
 .case-panel p{margin:0;font-size:15px;line-height:1.5;color:#3a3826;max-width:720px}
 .case-panel .go{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;background:var(--yellow);color:var(--dark);border-radius:99px;padding:8px 16px;text-decoration:none;margin-right:8px}
 @media(max-width:760px){.case{padding:44px var(--gx)}.case-top{grid-template-columns:1fr}.case-eps{grid-template-columns:repeat(12,1fr)}}
+
+.grid4.tiles>div b{white-space:nowrap}
+@media(max-width:760px){
+  .grid4.tiles{gap:10px}
+  .grid4.tiles>div{padding:16px 14px;cursor:default}
+  .grid4.tiles>div b{font-size:clamp(22px,7.4vw,30px);letter-spacing:-.04em;line-height:1.05}
+  .grid4.tiles>div .plus{display:none}
+  .grid4.tiles .more{grid-template-rows:1fr!important}
+  .grid4.tiles .more>div{padding-top:8px!important}
+  .grid4.tiles>div small{font-size:12px;line-height:1.35}
+}
 </style>
 </head>
 <body>
