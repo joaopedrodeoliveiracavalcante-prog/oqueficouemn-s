@@ -524,7 +524,6 @@ a{color:inherit}
     <nav><a href="#pesquisa">Pesquisa</a><a href="#serie">Episódios</a><a href="#cronograma">Cronograma</a><a href="#sobre">Sobre o filme</a><a href="#pessoas">Pessoas</a><a class="btn" href="#estrutura">Estrutura</a></nav>
   </div>
   <div class="photo"></div>
-  <canvas class="sil3d hero3d" id="silHero" aria-hidden="true"></canvas>
   <div class="inner">
     <p class="small">Um documentário sobre quatro mulheres de uma mesma família e a que já não está.</p>
     <h1>O que ficou<br>em nós</h1>
@@ -912,7 +911,6 @@ a{color:inherit}
         r.render(sc,cam)})();
     }
     var a=document.getElementById('silDemo');if(a)scene(a,{h:2.0,w:1.45,cy:.55,ry:.5});
-    var b=document.getElementById('silHero');if(b)scene(b,{h:2.6,w:3.0,cy:.75,ry:-.4,shapes:true});
   }
   var sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';sc.onload=boot;document.head.appendChild(sc);
 })();
