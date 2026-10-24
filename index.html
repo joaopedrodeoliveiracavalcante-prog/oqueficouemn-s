@@ -343,6 +343,55 @@ a{color:inherit}
 .hero .inner{z-index:2}
 .asp-hint{position:absolute;right:12px;top:10px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#ffffffaa;z-index:3;pointer-events:none}
 @media(max-width:700px){.hero3d{width:60vw;opacity:.9}}
+
+/* dobras clicáveis */
+.more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1)}
+.more>div{overflow:hidden;min-height:0}
+.fold.open>.more,.fold.open .more.m1{grid-template-rows:1fr}
+.fold{cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent}
+.fold .plus{position:absolute;right:14px;top:14px;width:28px;height:28px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font-size:18px;line-height:1;transition:transform .3s,background .3s;opacity:.85}
+.fold.open .plus{transform:rotate(45deg);background:#ffffff22}
+.ico3{width:46px;height:46px;margin-bottom:14px;display:block}
+.ico3 *{stroke:var(--yellow);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico3 .f{fill:var(--yellow);stroke:none}
+.tapnote{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.65;margin-top:10px}
+#p-formato .oc,#p-doc .oc{min-height:140px;padding-right:52px}
+#p-formato .oc small{font-size:15px;letter-spacing:0;text-transform:none;color:var(--yellow);font-weight:700;margin:0}
+#p-formato .oc .more>div{padding-top:10px}
+#p-doc .oc .more>div{padding-top:4px}
+.lk.fold{padding-right:50px}
+.lk.fold::after{display:none}
+.lk .plus{color:var(--olive);top:16px}
+.lk .more>div{padding-top:2px}
+.lk .go{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--dark);background:var(--yellow);border-radius:99px;padding:6px 14px;text-decoration:none}
+.grid4.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border:0}
+.grid4.tiles>div{border:0;margin:0;background:var(--stone);border-radius:6px;padding:18px;cursor:pointer;position:relative}
+.grid4.tiles>div b{font-size:34px}
+.grid4.tiles>div .plus{color:var(--olive)}
+.grid4.tiles .more{padding:0!important;border:0!important;margin:0!important}
+.grid4.tiles .more>div{padding:0!important;border:0!important;margin:0!important;background:none!important}
+.grid4.tiles .more>div{padding-top:6px!important}
+.grid4.tiles>div small{display:block;font-size:12px;line-height:1.35}
+.qcar{background:var(--dark);color:#fff;border-radius:8px;padding:34px 34px 24px;position:relative;overflow:hidden}
+.qcar::before{content:"“";position:absolute;right:24px;top:-34px;font-size:220px;line-height:1;color:var(--yellow);opacity:.18;font-weight:700}
+.qcar q{display:block;font-size:clamp(22px,3.4vw,36px);line-height:1.15;letter-spacing:-.03em;font-weight:600;color:var(--yellow);min-height:130px;quotes:none}
+.qcar cite{display:block;font-style:normal;font-size:13px;color:#ffffffb0;margin-top:12px;min-height:38px}
+.qcar .qn{display:flex;gap:8px;align-items:center;margin-top:16px}
+.qcar .qn button{width:38px;height:38px;border-radius:50%;border:1.5px solid #ffffff66;background:none;color:#fff;font-size:16px;cursor:pointer}
+.qcar .qn i{width:9px;height:9px;border-radius:50%;background:#ffffff44;cursor:pointer;transition:.25s}
+.qcar .qn i.on{background:var(--yellow);width:26px;border-radius:9px}
+.qcar .anim{animation:fadeUp .5s both}
+.nbtn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:600;color:var(--olive-d);background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 12px;cursor:pointer}
+.nbtn+.note{display:none}
+.nbtn.open+.note{display:block}
+.why li.fold{padding:14px 44px 14px 0}
+.why li.fold .plus{right:0;top:12px;color:var(--yellow)}
+.why li.fold h4{margin:0;font-size:18px;letter-spacing:-.02em;color:var(--yellow);font-weight:600}
+.why li.fold .more>div{padding-top:8px}
+.refbtn{display:flex;width:100%;justify-content:space-between;align-items:center;font:600 15px inherit;font-family:inherit;background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;cursor:pointer;color:var(--ink)}
+.refbtn span{font-size:22px;transition:transform .3s}
+.refbtn.open span{transform:rotate(45deg)}
+@media(max-width:700px){.grid4.tiles{grid-template-columns:1fr 1fr}.qcar{padding:26px 20px 18px}}
 </style>
 </head>
 <body>
@@ -471,7 +520,7 @@ a{color:inherit}
     <a class="lk" href="https://www.totem-films.com/films/gender-derby/" target="_blank" rel="noopener"><small>Filme · produtora</small><b>Gender Derby</b><span>Página do filme na Totem Films.</span></a>
     <a class="lk" href="https://arambartholl.com/vertical-cinema/" target="_blank" rel="noopener"><small>Arte · cinema vertical</small><b>Vertical Cinema, de Aram Bartholl</b><span>Projeto que exibe vídeos em 9:16 em tela cheia.</span></a>
     <a class="lk" href="https://dspace.unipampa.edu.br/bitstream/riu/8946/1/Ester%20de%20Oliveira%20Barbosa%202023.pdf" target="_blank" rel="noopener"><small>TCC · Unipampa, 2023</small><b>Lazer periférico: TikDoc seriado com base em mapas afetivos</b><span>Ester de Oliveira Barbosa. PDF completo.</span></a>
-    <a class="lk" href="https://eprints.whiterose.ac.uk/id/eprint/180677/" target="_blank" rel="noopener"><small>Artigo · IAFOR, 2019</small><b>Filmmaking Theory for Vertical Video Production</b><span>R. Clayton. Também há o <a href="https://papers.iafor.org/wp-content/uploads/papers/euromedia2019/EuroMedia2019_52556.pdf" target="_blank" rel="noopener" style="text-decoration:underline">PDF do artigo</a>.</span></a>
+    <a class="lk" href="https://eprints.whiterose.ac.uk/id/eprint/180677/" target="_blank" rel="noopener"><small>Artigo · IAFOR, 2019</small><b>Filmmaking Theory for Vertical Video Production</b><span>R. Clayton, 2019. O texto completo está em PDF no site da IAFOR.</span></a>
     <a class="lk" href="https://repositori.uvic-ucc.cat/handle/10854/180418" target="_blank" rel="noopener"><small>Revisão de literatura · 2023</small><b>El vídeo en formato vertical</b><span>H. Navarro-Güere, Revista Mediterránea de Comunicación.</span></a>
     <a class="lk" href="https://ideas.repec.org/a/dba/jmjcsa/v1y2025i1p18-28.html" target="_blank" rel="noopener"><small>Artigo · 2025</small><b>A Narrative Revolution in Vertical Framing</b><span>Wang e Guo. Dramas curtos verticais e "compressão espacial".</span></a>
     <a class="lk" href="https://sistemas.intercom.org.br/pdf/submissao/nacional/23/07072025110227686bd373e1f24.pdf" target="_blank" rel="noopener"><small>Artigo · Intercom</small><b>Melodrama vertical e vídeos curtos</b><span>Análise de A Vida Secreta do Meu Marido Bilionário.</span></a>
@@ -913,6 +962,82 @@ a{color:inherit}
     var a=document.getElementById('silDemo');if(a)scene(a,{h:2.0,w:1.45,cy:.55,ry:.5});
   }
   var sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';sc.onload=boot;document.head.appendChild(sc);
+})();
+
+/* pesquisa clicável */
+(function(){
+  var $=function(q,r){return (r||document).querySelector(q)},$$=function(q,r){return [].slice.call((r||document).querySelectorAll(q))};
+  function fold(el,hide,single){
+    var more=document.createElement('div');more.className='more';var inner=document.createElement('div');more.appendChild(inner);
+    hide.forEach(function(n){inner.appendChild(n)});el.appendChild(more);
+    var p=document.createElement('span');p.className='plus';p.textContent='+';el.appendChild(p);
+    el.classList.add('fold');el.setAttribute('role','button');el.tabIndex=0;el.setAttribute('aria-expanded','false');
+    var tg=function(e){var ca=e.target.closest&&e.target.closest('a,.go');if(ca&&ca!==el)return;if(e.preventDefault)e.preventDefault();
+      var o=!el.classList.contains('open');
+      if(single&&o)$$('.fold.open',el.parentNode).forEach(function(x){x.classList.remove('open');x.setAttribute('aria-expanded','false')});
+      el.classList.toggle('open',o);el.setAttribute('aria-expanded',o)};
+    el.addEventListener('click',tg);el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')tg(e)});
+  }
+  var SV={
+   q:'<svg class="ico3" viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="4"/><circle class="f" cx="24" cy="38" r="1.6"/><path d="M20 12h8"/></svg>',
+   d:'<svg class="ico3" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13v12l8 5"/></svg>',
+   g:'<svg class="ico3" viewBox="0 0 48 48"><path d="M8 30c0-12 8-20 20-20v10"/><path d="M20 28l8 8 10-12"/><circle class="f" cx="10" cy="38" r="2.4"/></svg>'
+  };
+  /* formato */
+  $$('#p-formato .cards .oc').forEach(function(c,i){
+    var sm=$('small',c),p=$('p',c);c.insertAdjacentHTML('afterbegin',SV['qdg'[i]]);
+    fold(c,[p]);
+  });
+  /* documentário */
+  var FL=['BR','NO','CA','BR','BR','DE'];
+  $$('#p-doc .doc-cards .oc').forEach(function(c,i){
+    var b=$('b',c);var rest=$$(':scope > :not(b)',c);
+    var t=document.createElement('span');t.className='tapnote';t.textContent='toque para ver';b.after(t);
+    b.insertAdjacentHTML('beforebegin','<span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;background:#ffffff22;border-radius:99px;padding:3px 10px;margin-bottom:10px">'+FL[i]+'</span><br>');
+    fold(c,rest);
+  });
+  /* links */
+  $$('#p-links .lk').forEach(function(a){
+    var sp=$('span',a),href=a.getAttribute('href');
+    var go=document.createElement('span');go.className='go';go.textContent='abrir ↗';
+    go.addEventListener('click',function(e){e.stopPropagation();window.open(href,'_blank','noopener')});
+    a.removeAttribute('href');a.removeAttribute('target');
+    fold(a,[sp,go]);
+    $$('a',sp).forEach(function(x){x.addEventListener('click',function(e){e.stopPropagation()})});
+  });
+  /* números */
+  var g4=$('#p-numeros .grid4');if(g4){g4.classList.add('tiles');
+    $$(':scope > div',g4).forEach(function(d){var sm=$('small',d);fold(d,[sm]);var b=$('b',d);d.insertBefore(b,d.firstChild)})}
+  /* citações em carrossel */
+  var qts=$$('#p-fontes .qt');if(qts.length){
+    var data=qts.map(function(q){return {q:$('q',q).textContent,c:$('cite',q).textContent}});
+    var car=document.createElement('div');car.className='qcar';
+    car.innerHTML='<q></q><cite></cite><div class="qn"><button aria-label="Anterior">←</button><button aria-label="Próxima">→</button><span class="dots" style="display:flex;gap:6px;margin-left:8px;align-items:center"></span></div>';
+    var dots=$('.dots',car),qq=$('q',car),cc=$('cite',car),k=0;
+    data.forEach(function(_,i){var d=document.createElement('i');d.onclick=function(){go(i)};dots.appendChild(d)});
+    function go(i){k=(i+data.length)%data.length;qq.textContent='“'+data[k].q+'”';cc.textContent='— '+data[k].c;
+      $$('i',dots).forEach(function(d,j){d.classList.toggle('on',j===k)});
+      [qq,cc].forEach(function(e){e.classList.remove('anim');void e.offsetWidth;e.classList.add('anim')})}
+    var bs=$$('button',car);bs[0].onclick=function(){go(k-1)};bs[1].onclick=function(){go(k+1)};
+    qts[0].parentNode.insertBefore(car,qts[0]);qts.forEach(function(q){q.remove()});go(0);
+  }
+  /* por que 9:16 */
+  var TT=['Rosto e gesto','Série em episódios','Geração dos netos','Lacuna na pesquisa'];
+  $$('#p-porque li').forEach(function(li,i){
+    var h=document.createElement('h4');h.textContent=TT[i]||('Motivo '+(i+1));
+    var txt=document.createElement('div');txt.textContent=li.textContent;li.textContent='';li.appendChild(h);
+    fold(li,[txt]);
+  });
+  /* notas */
+  $$('#pesquisa ~ section .note, #p-formato .note').forEach(function(n){
+    if(n.closest('#p-fontes')===null||true){var b=document.createElement('button');b.className='nbtn';b.type='button';b.innerHTML='ⓘ Nota da pesquisa';
+      b.onclick=function(){b.classList.toggle('open')};n.parentNode.insertBefore(b,n)}
+  });
+  /* referências */
+  var rf=$('#p-refs .refs');if(rf){var rb=document.createElement('button');rb.className='refbtn';rb.type='button';
+    rb.innerHTML='Ver as '+$$('p',rf).length+' referências (ABNT)<span>+</span>';rf.style.display='none';
+    rb.onclick=function(){rb.classList.toggle('open');rf.style.display=rb.classList.contains('open')?'block':'none'};
+    rf.parentNode.insertBefore(rb,rf)}
 })();
 </script>
 </body>
