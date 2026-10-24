@@ -335,7 +335,7 @@ a{color:inherit}
 .tilt{will-change:transform}
 
 .hero .photo::after{white-space:nowrap;left:auto}
-@media(min-width:1001px){.hero h1{font-size:min(15vw,calc((100vw - 2*var(--gx) - 290px)/4.75))}}
+@media(min-width:1001px){.hero h1{font-size:min(15vw,calc((100vw - 2*var(--gx))/4.75))}}
 </style>
 </head>
 <body>
@@ -507,7 +507,6 @@ a{color:inherit}
   <p class="note">Dados de mercado, plataformas e Globoplay vieram de reportagens e relatórios de consultorias (Omdia, Media Partners Asia, Deloitte, Adjust, Seu Dinheiro, Pipoca Moderna, Fast Company Brasil, CartaCapital, entre outros). Confira a fonte original antes de citar em trabalho. O guia completo está no arquivo novelas-na-vertical.html.</p>
 </section>
 
-<div class="marq" aria-hidden="true"><div><span>9:16</span><span>✦</span><span>memória</span><span>✦</span><span>matriarca</span><span>✦</span><span>arquivo</span><span>✦</span><span>entrevista</span><span>✦</span><span>episódio</span><span>✦</span><span>herança</span><span>✦</span><span>intimidade</span><span>✦</span><span>contradição</span><span>✦</span><span>vertical</span><span>✦</span><span>família</span><span>✦</span><span>O que ficou em nós</span><span>✦</span><span>9:16</span><span>✦</span><span>memória</span><span>✦</span><span>matriarca</span><span>✦</span><span>arquivo</span><span>✦</span><span>entrevista</span><span>✦</span><span>episódio</span><span>✦</span><span>herança</span><span>✦</span><span>intimidade</span><span>✦</span><span>contradição</span><span>✦</span><span>vertical</span><span>✦</span><span>família</span><span>✦</span><span>O que ficou em nós</span><span>✦</span></div></div>
 <!-- HERO -->
 <header class="hero" id="inicio">
   <div class="top">
@@ -515,14 +514,6 @@ a{color:inherit}
     <nav><a href="#pesquisa">Pesquisa</a><a href="#serie">Episódios</a><a href="#cronograma">Cronograma</a><a href="#sobre">Sobre o filme</a><a href="#pessoas">Pessoas</a><a class="btn" href="#estrutura">Estrutura</a></nav>
   </div>
   <div class="photo"></div>
-  <div class="phone" id="phone" title="Toque para avançar os episódios"><div class="notch"></div>
-    <div class="scr" id="phScr">
-      <div class="seg" id="phSeg"></div>
-      <svg class="face" viewBox="0 0 120 150" aria-hidden="true"><circle cx="60" cy="48" r="30" fill="#fff"/><path d="M8 150c0-42 22-62 52-62s52 20 52 62z" fill="#fff"/></svg>
-      <div class="tag" id="phTag"></div>
-      <div class="txt" id="phTxt"></div>
-      <div class="hint">toque para avançar</div>
-    </div></div>
   <div class="inner">
     <p class="small">Um documentário sobre quatro mulheres de uma mesma família e a que já não está.</p>
     <h1>O que ficou<br>em nós</h1>
@@ -750,7 +741,7 @@ a{color:inherit}
   var cur=0,timer=null,DUR=5200;
   var seg=$('#phSeg'),tag=$('#phTag'),txt=$('#phTxt'),scr=$('#phScr');
   var grads=['#7d7a48','#6f6f45','#8a7a3d','#5b5b37','#85845a','#6a6a40','#3a3320'];
-  if(seg){
+  if(seg&&$('#phone')){
     eps.forEach(function(){seg.appendChild(document.createElement('i'))});
     seg.style.setProperty('--dur',DUR+'ms');
     var render=function(){
