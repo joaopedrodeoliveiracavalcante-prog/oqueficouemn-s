@@ -214,6 +214,14 @@ a{color:inherit}
 .note a,.foot a{color:inherit;text-underline-offset:2px}
 @media(max-width:760px){.lk-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.sched td.m i{transform:none}.curve svg path{stroke-dashoffset:0}}
+
+/* LARGURA TOTAL */
+:root{--gx:max(32px,calc((100vw - 1120px)/2 + 32px))}
+.page{max-width:none;margin:0}
+.top{max-width:none;margin:0;padding-left:var(--gx);padding-right:var(--gx)}
+.hero .inner,.about,.white,.rs-intro,.sobre,.why,.foot{padding-left:var(--gx);padding-right:var(--gx)}
+.hero{min-height:620px}
+@media(max-width:760px){:root{--gx:20px}}
 </style>
 </head>
 <body>
