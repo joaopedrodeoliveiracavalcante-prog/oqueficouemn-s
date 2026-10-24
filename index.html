@@ -435,6 +435,7 @@ img,svg,canvas{-webkit-user-drag:none}
   .hero h1{font-size:clamp(56px,18vw,110px)}
 }
 
+.hidden-data{display:none!important}
 .case{background:var(--stone);padding:64px var(--gx)}
 .case .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .case h2{font-size:clamp(30px,5vw,56px);letter-spacing:-.04em;line-height:1;margin:10px 0 26px;font-weight:600;max-width:820px}
@@ -465,6 +466,12 @@ img,svg,canvas{-webkit-user-drag:none}
   .grid4.tiles .more>div{padding-top:8px!important}
   .grid4.tiles>div small{font-size:12px;line-height:1.35}
 }
+
+.chap{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--olive-d);margin-bottom:14px}
+.case .chap{margin-bottom:6px}
+.bridge{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:34px;padding:18px 22px;border-radius:10px;background:var(--dark);color:var(--yellow);text-decoration:none;font-size:clamp(16px,2.2vw,22px);font-weight:600;letter-spacing:-.02em;min-height:44px}
+.bridge span{font-size:22px;transition:transform .25s}
+.bridge:hover span{transform:translateY(4px)}
 </style>
 </head>
 <body>
@@ -481,7 +488,7 @@ img,svg,canvas{-webkit-user-drag:none}
 </section>
 
 <section class="case" id="p-case">
-  <div class="k">Comece por um caso</div>
+  <div class="chap">Pesquisa · 1 de 6 · O caso</div>
   <h2>Um app, 68 episódios de 1 minuto e a primeira novela vertical brasileira.</h2>
   <div class="case-top">
     <div class="case-big"><b data-n="423">423 mi</b><span>visualizações de “A vida secreta do meu marido bilionário” (ReelShort), segundo as reportagens consultadas</span></div>
@@ -492,19 +499,9 @@ img,svg,canvas{-webkit-user-drag:none}
 </section>
 
 <!-- PESQUISA SOBRE O FORMATO VERTICAL -->
-<section class="rs-intro" id="pesquisa">
-  <div class="tag">A PESQUISA · ANTES DO FILME</div>
-  <h1>Por que contar<br>na vertical.</h1>
-  <p>Antes de decidir como filmar, estudamos o formato: de onde vêm as novelas na vertical (microdramas), quem as faz, como o Brasil entrou e se existe documentário em 9:16. Esta é a base que sustenta a escolha de uma série documental vertical.</p>
-  <div class="stats">
-    <div><b>9:16</b><span>quadro nativo do celular</span></div>
-    <div><b>US$ 11 bi</b><span>receita global dos dramas curtos em 2025 (Omdia)</span></div>
-    <div><b>64 mi</b><span>views de uma série documental vertical no Brasil em 3 semanas</span></div>
-  </div>
-  <div class="rs-nav"><a href="#p-case">O case</a><a href="#p-formato">O formato</a><a href="#p-numeros">Números</a><a href="#p-origem">Origem e Brasil</a><a href="#p-doc">Documentário vertical</a><a href="#p-links">Links</a><a href="#p-fontes">Frases das fontes</a><a href="#p-porque">Por que 9:16</a><a href="#p-refs">Referências</a><a href="#cronograma">Cronograma</a></div>
-</section>
 
 <section class="white" id="p-formato">
+  <div class="chap">Pesquisa · 2 de 6 · O formato</div>
   <div class="h2">O que é uma novela na vertical.<span class="r">O formato</span></div>
   <div class="cards">
     <div class="oc"><small>Quadro</small><p>9:16 nativo. A composição gira em torno de rostos e gestos, não de cenário.</p></div>
@@ -538,9 +535,11 @@ img,svg,canvas{-webkit-user-drag:none}
       <div class="scale"><span>HORIZONTAL</span><span>VERTICAL</span></div>
     </div>
   </div>
+  <a class="bridge" href="#p-numeros">Esse é o formato. Quanto dinheiro e atenção ele move? <span>↓</span></a>
 </section>
 
 <section class="white" id="p-numeros">
+  <div class="chap">Pesquisa · 3 de 6 · O mercado</div>
   <div class="h2">Em números.<span class="r">Mercado</span></div>
   <div class="charts">
     <div class="chart" id="ch1"><h3>Receita global dos dramas curtos</h3><p class="sub">US$ bilhões. Barras listradas são projeções.</p>
@@ -561,31 +560,13 @@ img,svg,canvas{-webkit-user-drag:none}
       <div class="labs"><div><b>2025</b></div><div><b>2026</b>projeção</div><div><b>2031</b>projeção</div></div>
     </div>
   </div>
-  <div class="grid4" style="max-width:none">
-    <div><small>Receita global estimada em 2025 (Omdia); projeção de ~US$ 14 bi em 2026</small><b>US$ 11 bi</b></div>
-    <div><small>Parte de 2026 vinda de fora da China (Omdia)</small><b>~US$ 3 bi</b></div>
-    <div><small>Estimativa da Deloitte para 2026, só séries in-app</small><b>US$ 7,8 bi</b></div>
-    <div><small>Projeção citada por Variety e RADII para 2030</small><b>US$ 26 bi</b></div>
-    <div><small>Downloads globais de apps de dramas curtos em 2025 (Adjust)</small><b>2,3 bi</b></div>
-    <div><small>Uso diário médio no ReelShort no 4º trimestre de 2025</small><b>35,7 min</b></div>
-  </div>
-  <p class="note">As estimativas variam porque cada consultoria define "mercado" de um jeito. Use faixas, não um número único.</p>
+    <p class="note">As estimativas variam porque cada consultoria define "mercado" de um jeito. Use faixas, não um número único.</p>
+  <a class="bridge" href="#p-doc">Mercado grande, mas é só ficção? Existe documentário na vertical. <span>↓</span></a>
 </section>
 
-<section class="white stone" id="p-origem">
-  <div class="h2">Do duanju ao Brasil.<span class="r">Origem</span></div>
-  <div class="tl">
-    <div><b>~2018</b><p>Esquetes e vídeos seriados em Douyin e Kuaishou dão origem ao formato na China. A Kuaishou lança uma seção dedicada em 2019.</p></div>
-    <div><b>2020</b><p>A autoridade chinesa de rádio e TV reconhece o duanju como gênero audiovisual online.</p></div>
-    <div><b>2022</b><p>Empresas chinesas passam a mirar os EUA. No Brasil, o Kwai lança o TeleKwai. No mesmo ano, estreia a série documental vertical Seleção de Estrelas.</p></div>
-    <div><b>2024</b><p>O mercado chinês passa de 50 bilhões de yuans (cerca de US$ 6,9 bi) e supera a bilheteria de cinema do país.</p></div>
-    <div><b>2025</b><p>A Vida Secreta do Meu Marido Bilionário (ReelShort) é tratada como a primeira novela vertical brasileira de destaque, com mais de 423 milhões de visualizações. A Globo grava o piloto da sua primeira.</p></div>
-    <div><b>2026</b><p>Globoplay lança em média um microdrama por mês. Em 14/10/2026, a Globo anuncia derivados verticais para toda novela inédita a partir de 2027.</p></div>
-  </div>
-  <p class="note">A data da "primeira novela vertical" muda conforme a fonte. Separe "primeira nacional de destaque", "primeira de emissora de TV" e "primeira do formato".</p>
-</section>
 
 <section class="white" id="p-doc">
+  <div class="chap">Pesquisa · 4 de 6 · Documentário na vertical</div>
   <div class="h2">Existe documentário na vertical? Sim.<span class="r">Documentário vertical</span></div>
   <div class="doc-cards">
     <div class="oc"><b>Seleção de Estrelas (Kwai/CBF, 2022)</b><p>Série documental sobre jogadores da seleção brasileira antes da Copa do Qatar, exibida só na vertical. Mais de 64 milhões de visualizações em 3 semanas.</p><a class="lnk gap" href="https://www.poder360.com.br/midia/filmes-na-vertical-sao-o-presente-nao-o-futuro-diz-diretor/" target="_blank" rel="noopener">Poder360</a><a class="lnk gap" href="https://canaltech.com.br/redes-sociais/selecao-brasileira-ganha-serie-documental-no-kwai-227626/" target="_blank" rel="noopener">Canaltech</a><a class="lnk gap" href="https://www.lance.com.br/selecao-brasileira/cbf-lanca-documentario-em-serie-com-jogadores-da-selecao-brasileira.html" target="_blank" rel="noopener">Lance</a></div>
@@ -595,37 +576,13 @@ img,svg,canvas{-webkit-user-drag:none}
     <div class="oc"><b>Paulinho, O Virgem</b><p>Websérie em falso documentário do Porta dos Fundos, gravada na vertical.</p></div>
     <div class="oc"><b>Vertical Cinema</b><p>Obra de Aram Bartholl que exibe vídeos amadores em 9:16 em tela cheia, tratando o "erro" do vertical como linguagem.</p><a class="lnk gap" href="https://arambartholl.com/vertical-cinema/" target="_blank" rel="noopener">Site da obra</a></div>
   </div>
+  <a class="bridge" href="#p-fontes">O que dizem os autores sobre isso? <span>↓</span></a>
 </section>
 
 
-<section class="white" id="p-links">
-  <div class="h2">Para assistir, ler e conferir.<span class="r">Links da pesquisa</span></div>
-  <div class="lk-grid">
-     <a class="lk" href="https://www.youtube.com/watch?v=1iNCKmn_tlY" target="_blank" rel="noopener" style="border-color:var(--olive);border-width:2px"><small>▶ Vídeo · explica o fenômeno</small><b>O público quer vídeos rápidos ou histórias longas?</b><span>CNN Brasil, 3 min 29 s. Painel do Rio2C sobre séries e novelas verticais, com episódios curtos e ganchos pensados para o celular.</span></a>
-     <a class="lk" href="https://www.itatiaia.com.br/entretenimento/globo-grava-novela-vertical-com-jade-picon-apos-sucesso-de-a-vida-secreta-do-meu-marido-bilionario/" target="_blank" rel="noopener" style="border-color:var(--olive);border-width:2px"><small>★ Case famoso · Brasil</small><b>A vida secreta do meu marido bilionário</b><span>Primeira novela vertical brasileira, no ReelShort: 68 episódios de cerca de 1 minuto e maior sucesso do app em junho de 2025. O caso levou a Globo a gravar a sua própria novela vertical.</span></a>
-     <a class="lk" href="https://www.youtube.com/watch?v=xC4QplW0QT4" target="_blank" rel="noopener" style="border-color:var(--olive);border-width:2px"><small>▶ Vídeo · assista ao case</small><b>A vida secreta do meu marido bilionário (ReelShort Brasil)</b><span>Episódios no canal Reelshort Brasil, no YouTube, para ver como é a linguagem na prática.</span></a>
-    <a class="lk" href="https://www.poder360.com.br/midia/filmes-na-vertical-sao-o-presente-nao-o-futuro-diz-diretor/" target="_blank" rel="noopener"><small>Série documental · reportagem</small><b>Série documental inova com formato vertical para celulares</b><span>Poder360, 3 nov. 2022. Entrevistas com os diretores de Seleção de Estrelas.</span></a>
-    <a class="lk" href="https://canaltech.com.br/redes-sociais/selecao-brasileira-ganha-serie-documental-no-kwai-227626/" target="_blank" rel="noopener"><small>Série documental · lançamento</small><b>Seleção Brasileira ganha série documental no Kwai</b><span>Canaltech. A série pode ser vista no aplicativo do Kwai.</span></a>
-    <a class="lk" href="https://www.lance.com.br/selecao-brasileira/cbf-lanca-documentario-em-serie-com-jogadores-da-selecao-brasileira.html" target="_blank" rel="noopener"><small>Série documental · CBF</small><b>CBF lança documentário em série com jogadores da Seleção</b><span>Lance!. Cobertura do lançamento da série.</span></a>
-    <a class="lk" href="https://www.newsshooter.com/2016/10/24/norwegian-broadcaster-nrk-make-their-first-vertical-video-doc-is-this-the-shape-of-the-future/" target="_blank" rel="noopener"><small>Documentário vertical · NRK</small><b>NRK makes its first vertical video doc</b><span>Newsshooter, 24 out. 2016. Como a equipe filmou em 9:16.</span></a>
-    <a class="lk" href="https://cmf-fmc.ca/?p=69897" target="_blank" rel="noopener"><small>Documentário vertical · Canadá</small><b>Gender Derby: Vertical Documentary as a New Genre</b><span>Canada Media Fund. O vertical tratado como gênero.</span></a>
-    <a class="lk" href="https://www.totem-films.com/films/gender-derby/" target="_blank" rel="noopener"><small>Filme · produtora</small><b>Gender Derby</b><span>Página do filme na Totem Films.</span></a>
-    <a class="lk" href="https://arambartholl.com/vertical-cinema/" target="_blank" rel="noopener"><small>Arte · cinema vertical</small><b>Vertical Cinema, de Aram Bartholl</b><span>Projeto que exibe vídeos em 9:16 em tela cheia.</span></a>
-    <a class="lk" href="https://dspace.unipampa.edu.br/bitstream/riu/8946/1/Ester%20de%20Oliveira%20Barbosa%202023.pdf" target="_blank" rel="noopener"><small>TCC · Unipampa, 2023</small><b>Lazer periférico: TikDoc seriado com base em mapas afetivos</b><span>Ester de Oliveira Barbosa. PDF completo.</span></a>
-    <a class="lk" href="https://eprints.whiterose.ac.uk/id/eprint/180677/" target="_blank" rel="noopener"><small>Artigo · IAFOR, 2019</small><b>Filmmaking Theory for Vertical Video Production</b><span>R. Clayton, 2019. O texto completo está em PDF no site da IAFOR.</span></a>
-    <a class="lk" href="https://repositori.uvic-ucc.cat/handle/10854/180418" target="_blank" rel="noopener"><small>Revisão de literatura · 2023</small><b>El vídeo en formato vertical</b><span>H. Navarro-Güere, Revista Mediterránea de Comunicación.</span></a>
-    <a class="lk" href="https://ideas.repec.org/a/dba/jmjcsa/v1y2025i1p18-28.html" target="_blank" rel="noopener"><small>Artigo · 2025</small><b>A Narrative Revolution in Vertical Framing</b><span>Wang e Guo. Dramas curtos verticais e "compressão espacial".</span></a>
-    <a class="lk" href="https://sistemas.intercom.org.br/pdf/submissao/nacional/23/07072025110227686bd373e1f24.pdf" target="_blank" rel="noopener"><small>Artigo · Intercom</small><b>Melodrama vertical e vídeos curtos</b><span>Análise de A Vida Secreta do Meu Marido Bilionário.</span></a>
-    <a class="lk" href="https://omdia.tech.informa.com/om139375/microdramas-to-generate-%2411bn-in-global-revenue-in-2025" target="_blank" rel="noopener"><small>Mercado · Omdia</small><b>Microdramas to generate $11bn in global revenue in 2025</b><span>Fonte do número de receita global.</span></a>
-    <a class="lk" href="https://mundodomarketing.com.br/microdramas-aceleram-mercado-que-devera-alcancar-us-26-bilhoes-ate-2030" target="_blank" rel="noopener"><small>Mercado · Mundo do Marketing</small><b>Microdramas aceleram mercado que deverá alcançar US$ 26 bi até 2030</b><span>Projeção para 2030.</span></a>
-    <a class="lk" href="https://www.meioemensagem.com.br/midia/a-estrategia-da-globo-com-as-novelas-verticais" target="_blank" rel="noopener"><small>Brasil · Globo</small><b>A estratégia da Globo com as novelas verticais</b><span>Meio & Mensagem.</span></a>
-    <a class="lk" href="https://diariodonordeste.verdesmares.com.br/verso/novela-vertical-conheca-o-formato-que-virou-fenomeno-no-brasil-1.3695060" target="_blank" rel="noopener"><small>Brasil · panorama</small><b>Novela vertical? Conheça o formato que virou fenômeno no Brasil</b><span>Diário do Nordeste.</span></a>
-    <a class="lk" href="https://marcaspelomundo.com.br/veiculos/kwai-aposta-em-novo-formato-de-entretenimento-com-mininovelas-de-dois-minutos/" target="_blank" rel="noopener"><small>Brasil · Kwai</small><b>Kwai aposta em mininovelas de dois minutos</b><span>Marcas pelo Mundo. A entrada do Kwai no formato.</span></a>
-  </div>
-  <p class="note">Os links abrem em nova aba. Reportagens e relatórios de mercado podem mudar ou ficar atrás de cadastro. Confira a fonte original antes de citar em trabalho.</p>
-</section>
 
 <section class="white" id="p-fontes">
+  <div class="chap">Pesquisa · 5 de 6 · O que dizem as fontes</div>
   <div class="h2">O que dizem as fontes.<span class="r">Citações</span></div>
   <div class="qt"><q>Eles assistem o celular de pé e cabe a nós melhorar a experiência deles</q><cite>Miguel Varca, diretor de Seleção de Estrelas (SANTIAGO, 2022).</cite></div>
   <div class="qt"><q>É uma coisa de inversão de tela</q><cite>Madê Picchi, diretora, sobre custos e modo de filmar na vertical (SANTIAGO, 2022).</cite></div>
@@ -633,9 +590,11 @@ img,svg,canvas{-webkit-user-drag:none}
   <div class="qt"><q>o celular tem seu formato de fabricação retangular vertical</q><cite>BARBOSA, 2023, p. 36.</cite></div>
   <div class="qt"><q>propõe vídeos na vertical, entre 5 e 10 minutos de duração</q><cite>BARBOSA, 2023, p. 37, sobre o TikDoc.</cite></div>
   <p class="note">Páginas conforme a numeração impressa do trabalho. Na literatura em inglês e espanhol consultada, só os resumos foram lidos, por isso aparecem em paráfrase: Clayton (2019) aponta que o 9:16 acompanha a forma como as pessoas seguram o aparelho e que há pouca literatura de apoio a quem filma na vertical; Navarro-Güere (2023) conclui que o vídeo vertical desafia as convenções de composição, estilo e estética e que a pesquisa científica ainda é escassa; Wang e Guo (2025) observam que o enquadramento vertical transforma as estratégias narrativas e o engajamento do público.</p>
+  <a class="bridge" href="#p-porque">Com tudo isso, por que 9:16 para este filme? <span>↓</span></a>
 </section>
 
 <section class="why" id="p-porque">
+  <div class="chap" style="color:#ffffff99">Pesquisa · 6 de 6 · A decisão</div>
   <h2>Por que 9:16 para este filme.</h2>
   <ol>
     <li>Memória familiar se faz de rosto, gesto e objeto em primeiro plano, o que o quadro vertical valoriza e que combina com a entrevista participativa de Nichols (2005).</li>
@@ -643,36 +602,14 @@ img,svg,canvas{-webkit-user-drag:none}
     <li>A geração dos netos, que recebe a memória por relato, pode encontrar a série no aparelho em que já assiste ao audiovisual.</li>
     <li>A literatura sobre vídeo vertical é escassa. Um documentário de memória em 9:16 contribui para a discussão sobre a vertical como forma de pesquisa e registro, e não só de entretenimento.</li>
   </ol>
+  <a class="bridge" href="#sobre-filme">Agora, o filme. <span>↓</span></a>
 </section>
 
-<section class="white stone" id="p-refs">
-  <div class="h2">Referências da pesquisa.<span class="r">ABNT</span></div>
-  <div class="refs">
-    <p>BARBOSA, Ester de Oliveira. <b>Lazer periférico</b>: TikDoc seriado com base em mapas afetivos. 2023. Trabalho de Conclusão de Curso (Bacharelado em Jornalismo) – Universidade Federal do Pampa, São Borja, 2023. Disponível em: <a href="https://dspace.unipampa.edu.br/bitstream/riu/8946/1/Ester%20de%20Oliveira%20Barbosa%202023.pdf" target="_blank" rel="noopener">https://dspace.unipampa.edu.br/bitstream/riu/8946/1/Ester%20de%20Oliveira%20Barbosa%202023.pdf</a>. Acesso em: 24 out. 2026.</p>
-    <p>CLAYTON, R. <b>Filmmaking theory for vertical video production</b>. In: EUROPEAN CONFERENCE ON MEDIA, COMMUNICATION & FILM, 2019, Brighton. Proceedings [...]. Brighton: IAFOR, 2019. Disponível em: <a href="https://eprints.whiterose.ac.uk/id/eprint/180677/" target="_blank" rel="noopener">https://eprints.whiterose.ac.uk/id/eprint/180677/</a>. Acesso em: 24 out. 2026.</p>
-    <p>NAVARRO-GÜERE, H. El vídeo en formato vertical: una revisión de la literatura en comunicación. <b>Revista Mediterránea de Comunicación</b>, v. 14, n. 1, p. 69-81, 2023. Disponível em: <a href="https://repositori.uvic-ucc.cat/handle/10854/180418" target="_blank" rel="noopener">https://repositori.uvic-ucc.cat/handle/10854/180418</a>. Acesso em: 24 out. 2026.</p>
-    <p>NORWEGIAN broadcaster NRK make their first vertical video doc: is this the shape of the future? <b>Newsshooter</b>, 24 out. 2016. Disponível em: <a href="https://www.newsshooter.com/2016/10/24/norwegian-broadcaster-nrk-make-their-first-vertical-video-doc-is-this-the-shape-of-the-future/" target="_blank" rel="noopener">https://www.newsshooter.com/2016/10/24/norwegian-broadcaster-nrk-make-their-first-vertical-video-doc-is-this-the-shape-of-the-future/</a>. Acesso em: 24 out. 2026.</p>
-    <p>SANTIAGO, Lorenzo. Série documental inova com formato vertical para celulares. <b>Poder360</b>, 3 nov. 2022. Disponível em: <a href="https://www.poder360.com.br/midia/filmes-na-vertical-sao-o-presente-nao-o-futuro-diz-diretor/" target="_blank" rel="noopener">https://www.poder360.com.br/midia/filmes-na-vertical-sao-o-presente-nao-o-futuro-diz-diretor/</a>. Acesso em: 24 out. 2026.</p>
-    <p>WANG, Yuxi; GUO, Jianfa. A narrative revolution in vertical framing: the aesthetics of “spatial compression” and multimodal reconstruction in vertical screen short dramas. <b>Journal of Media, Journalism & Communication Studies</b>, v. 1, n. 1, p. 18-28, 2025. Disponível em: <a href="https://ideas.repec.org/a/dba/jmjcsa/v1y2025i1p18-28.html" target="_blank" rel="noopener">https://ideas.repec.org/a/dba/jmjcsa/v1y2025i1p18-28.html</a>. Acesso em: 24 out. 2026.</p>
-  </div>
-  <p class="note">Dados de mercado, plataformas e Globoplay vieram de reportagens e relatórios de consultorias (Omdia, Media Partners Asia, Deloitte, Adjust, Seu Dinheiro, Pipoca Moderna, Fast Company Brasil, CartaCapital, entre outros). Confira a fonte original antes de citar em trabalho. O guia completo está no arquivo novelas-na-vertical.html.</p>
-</section>
 
 <!-- HERO -->
-<header class="hero" id="inicio">
-  <div class="top">
-    <a class="logo" href="#inicio">O que<br>ficou em nós</a>
-    <nav><a href="#pesquisa">Pesquisa</a><a href="#serie">Episódios</a><a href="#cronograma">Cronograma</a><a href="#sobre">Sobre o filme</a><a href="#pessoas">Pessoas</a><a class="btn" href="#estrutura">Estrutura</a></nav>
-  </div>
-  <div class="photo"></div>
-  <div class="inner">
-    <p class="small">Um documentário sobre quatro mulheres de uma mesma família e a que já não está.</p>
-    <h1>O que ficou<br>em nós</h1>
-  </div>
-</header>
 
-<div class="about">
-  <div class="tag">SOBRE O FILME</div>
+<div class="about" id="sobre-filme">
+  <div class="tag">O FILME · 1 DE 6 · A IDEIA</div>
   <p>Uma série documental vertical em 7 episódios. Três matriarcas vivas e uma ausente contam, cada uma do seu jeito, quem foi a mulher que ainda organiza a forma como todas se enxergam.</p>
   <div>
     <p style="font-size:13px;color:#ffffffcc">Pergunta de pesquisa: como a memória compartilhada de uma matriarca ausente molda e revela a identidade das mulheres de sua família?</p>
@@ -686,6 +623,7 @@ img,svg,canvas{-webkit-user-drag:none}
 
 <!-- COMO FUNCIONA -->
 <section class="white" id="estrutura">
+  <div class="chap">O filme · 2 de 6 · Como é feito</div>
   <div class="h2">Do arquivo à montagem: como o filme é feito, em três passos.<span class="r">Processo</span></div>
   <div class="steps">
     <div class="s"><small>(01)</small><h3>Arquivo</h3><p>Fotos, vídeos e objetos da avó. Começa antes das entrevistas, porque digitalizar e conseguir com a família demora.</p></div>
@@ -693,10 +631,12 @@ img,svg,canvas{-webkit-user-drag:none}
     <div class="s"><small>(03)</small><h3>Montagem</h3><p>Episódio por episódio, na ordem, fechando um antes de abrir o seguinte.</p></div>
     <div class="s img"><span>Gravação nativa em 9:16, rosto e gesto no centro do quadro.</span></div>
   </div>
+  <a class="bridge" href="#serie">Como isso vira episódios? <span>↓</span></a>
 </section>
 
 <!-- EPISÓDIOS -->
 <section class="white stone center" id="serie">
+  <div class="chap">O filme · 3 de 6 · Os episódios</div>
   <div class="h2">Explore os episódios.</div>
   <span class="pill-note">Títulos dos episódios ainda a definir</span>
   <div class="eps">
@@ -708,10 +648,11 @@ img,svg,canvas{-webkit-user-drag:none}
     <div class="ep"><div class="ph"><b>EP 6</b><i>~7 min</i></div><h4>Episódio 6</h4><span>Contar o que chegou até a geração mais nova por relatos: memória contada contra memória vivida.</span></div>
     <div class="ep"><div class="ph"><b>EP 7</b><i>~4 min</i></div><h4>Episódio 7</h4><span>Juntar as vozes sem resolver as contradições e voltar ao objeto ou lugar do prólogo.</span></div>
   </div>
+  <a class="bridge" href="#pessoas">E quem conta essa história? <span>↓</span></a>
 </section>
 
 <!-- PERGUNTAS -->
-<section class="white">
+<section class="white hidden-data">
   <div class="h2">As perguntas que movem cada bloco.</div>
   <div class="cards">
     <div class="oc"><small>Episódio 2</small><p>Quem era essa mulher para cada uma das filhas, irmãs e netas?</p></div>
@@ -724,11 +665,6 @@ img,svg,canvas{-webkit-user-drag:none}
 </section>
 
 <!-- SOBRE -->
-<section class="sobre" id="sobre">
-  <div class="mini"><i></i><i></i><i></i></div>
-  <h2>Sobre o filme</h2>
-  <p>É um trabalho pessoal e acadêmico: o TCC de Publicidade e Propaganda e um documentário de família ao mesmo tempo. A estrutura é híbrida, em blocos temáticos, com a avó como eixo emocional e as três matriarcas vivas como protagonistas iguais.</p>
-</section>
 
 <section class="white stone">
   <div class="h2">O que faz este filme ser o que é.</div>
@@ -741,32 +677,10 @@ img,svg,canvas{-webkit-user-drag:none}
   </div>
 </section>
 
-<section class="white">
-  <div class="two">
-    <div>
-      <div class="h2" style="margin-bottom:10px">Estrutura em blocos.</div>
-      <p>Não segue ordem cronológica nem uma pessoa por vez. Cada bloco responde a uma parte da pergunta de pesquisa.</p>
-    </div>
-    <div class="grid4" style="margin-top:0">
-      <div><small>Episódios</small><b>7</b></div>
-      <div><small>Duração total</small><b>~42 min</b></div>
-      <div><small>Matriarcas vivas</small><b>3</b></div>
-      <div><small>Matriarca ausente</small><b>1</b></div>
-    </div>
-  </div>
-  <div class="blocks" style="margin-top:34px">
-    <div class="blk"><small>EP 1</small><div><p>A avó aparece só por rastros: objeto, foto, cômodo, voz de arquivo.</p></div><div class="t">~3 min</div></div>
-    <div class="blk"><small>EP 2</small><div><p>Cada matriarca descreve a avó. As versões começam a divergir.</p></div><div class="t">~7 min</div></div>
-    <div class="blk"><small>EP 3</small><div><p>Heranças concretas e invisíveis: receitas, ditados, gestos, a casa.</p></div><div class="t">~6 min</div></div>
-    <div class="blk"><small>EP 4</small><div><p>Contradições e lacunas. Sustenta a hipótese de fragmentação.</p></div><div class="t">~8 min</div></div>
-    <div class="blk"><small>EP 5</small><div><p>Cada uma fora da sombra da avó: rotina, escolhas, o que fizeram diferente.</p></div><div class="t">~7 min</div></div>
-    <div class="blk"><small>EP 6</small><div><p>Memória direta contra memória contada: você, Rebeca e os primos.</p></div><div class="t">~7 min</div></div>
-    <div class="blk"><small>EP 7</small><div><p>As vozes se cruzam sem resolver as contradições. Volta ao objeto do prólogo.</p></div><div class="t">~4 min</div></div>
-  </div>
-</section>
 
 <!-- PESSOAS -->
 <section class="white stone center" id="pessoas">
+  <div class="chap">O filme · 4 de 6 · Quem conta</div>
   <div class="h2">As mulheres por trás desta história.</div>
   <p style="font-size:12px;color:var(--muted);margin:-10px 0 0">Espaços reservados para as fotos de cada uma.</p>
   <div class="people">
@@ -777,10 +691,12 @@ img,svg,canvas{-webkit-user-drag:none}
     <div class="person"><div class="ph"></div><b>Rebeca</b><span>Prima · geração mais nova</span></div>
     <div class="person"><div class="ph"></div><b>Oliver</b><span>Direção · neto</span></div>
   </div>
+  <a class="bridge" href="#pendencias">O que ainda falta decidir? <span>↓</span></a>
 </section>
 
 <!-- PENDÊNCIAS -->
-<section class="white">
+<section class="white" id="pendencias">
+  <div class="chap">O filme · 5 de 6 · O que falta decidir</div>
   <div class="pend">
     <div>
       <h2>O que ainda precisa ser decidido.</h2>
@@ -796,12 +712,14 @@ img,svg,canvas{-webkit-user-drag:none}
       <div class="field"><label>Cronograma de pré-produção à montagem</label><div class="todo">a montar</div></div>
     </div>
   </div>
+  <a class="bridge" href="#cronograma">Quando acontece o resto? O plano até julho. <span>↓</span></a>
 </section>
 
 <!-- FOOTER -->
 
 <!-- CRONOGRAMA -->
 <section class="white" id="cronograma">
+  <div class="chap">O filme · 6 de 6 · O plano</div>
   <div class="h2">Cronograma de ações, de novembro a julho.<span class="r">Plano de trabalho</span></div>
     <div class="sched-today" id="schedToday"></div>
   <div class="sched-ctl" id="schedCtl">
@@ -826,10 +744,23 @@ img,svg,canvas{-webkit-user-drag:none}
 </section>
 
 <section class="white stone" id="cronograma-detalhe">
+  <div class="chap">O filme · 6 de 6 · Período a período</div>
   <div class="h2">O que acontece em cada período.<span class="r">Detalhe</span></div>
   <div class="tl"><div><b>Até outubro/2026 (já realizado)</b><p>Estudo das novelas na vertical e dos documentários verticais; avaliação do formato 9:16; divisão do tema em partes; pergunta de pesquisa; sete episódios de cerca de 42 minutos; título “O que ficou em nós”; o que cada episódio precisa contar; pré-projeto (Pré-TCC).</p></div><div><b>Novembro/2026</b><p>Fechamento do escopo e definição do formato final da imagem (9:16 nativo, reenquadrado ou duplo). Pesquisa bibliográfica (Halbwachs, Bosi, Nichols) e fichamentos.</p></div><div><b>Dezembro/2026</b><p>Roteiro de entrevistas por episódio e termos de autorização de uso de imagem e voz. Testes de câmera e áudio, escolha de equipamento e locações, agendamento com as entrevistadas.</p></div><div><b>Janeiro/2027</b><p>Levantamento, digitalização e catalogação do material de arquivo (fotografias, cartas e objetos). Entrevista-piloto e ajuste do roteiro.</p></div><div><b>Fevereiro e março/2027</b><p>Início das gravações (data exata a confirmar): entrevistas com as mulheres que conviveram com a matriarca. Imagens de cobertura, transcrição das primeiras entrevistas.</p></div><div><b>Abril/2027</b><p>Entrevistas com a geração dos netos. Transcrição, início da categorização e da redação do relatório.</p></div><div><b>Maio e junho/2027</b><p>Categorização dos depoimentos, montagem dos episódios e redação do relatório. Em junho, finalização (cor, som e legendas).</p></div><div><b>Julho/2027</b><p>Revisão final da série e do relatório, ajustes indicados pelo orientador, entrega e apresentação (data a confirmar).</p></div></div>
 </section>
 
+<section class="white stone" id="p-refs">
+  <div class="h2">Referências da pesquisa.<span class="r">ABNT</span></div>
+  <div class="refs">
+    <p>BARBOSA, Ester de Oliveira. <b>Lazer periférico</b>: TikDoc seriado com base em mapas afetivos. 2023. Trabalho de Conclusão de Curso (Bacharelado em Jornalismo) – Universidade Federal do Pampa, São Borja, 2023. Disponível em: <a href="https://dspace.unipampa.edu.br/bitstream/riu/8946/1/Ester%20de%20Oliveira%20Barbosa%202023.pdf" target="_blank" rel="noopener">https://dspace.unipampa.edu.br/bitstream/riu/8946/1/Ester%20de%20Oliveira%20Barbosa%202023.pdf</a>. Acesso em: 24 out. 2026.</p>
+    <p>CLAYTON, R. <b>Filmmaking theory for vertical video production</b>. In: EUROPEAN CONFERENCE ON MEDIA, COMMUNICATION & FILM, 2019, Brighton. Proceedings [...]. Brighton: IAFOR, 2019. Disponível em: <a href="https://eprints.whiterose.ac.uk/id/eprint/180677/" target="_blank" rel="noopener">https://eprints.whiterose.ac.uk/id/eprint/180677/</a>. Acesso em: 24 out. 2026.</p>
+    <p>NAVARRO-GÜERE, H. El vídeo en formato vertical: una revisión de la literatura en comunicación. <b>Revista Mediterránea de Comunicación</b>, v. 14, n. 1, p. 69-81, 2023. Disponível em: <a href="https://repositori.uvic-ucc.cat/handle/10854/180418" target="_blank" rel="noopener">https://repositori.uvic-ucc.cat/handle/10854/180418</a>. Acesso em: 24 out. 2026.</p>
+    <p>NORWEGIAN broadcaster NRK make their first vertical video doc: is this the shape of the future? <b>Newsshooter</b>, 24 out. 2016. Disponível em: <a href="https://www.newsshooter.com/2016/10/24/norwegian-broadcaster-nrk-make-their-first-vertical-video-doc-is-this-the-shape-of-the-future/" target="_blank" rel="noopener">https://www.newsshooter.com/2016/10/24/norwegian-broadcaster-nrk-make-their-first-vertical-video-doc-is-this-the-shape-of-the-future/</a>. Acesso em: 24 out. 2026.</p>
+    <p>SANTIAGO, Lorenzo. Série documental inova com formato vertical para celulares. <b>Poder360</b>, 3 nov. 2022. Disponível em: <a href="https://www.poder360.com.br/midia/filmes-na-vertical-sao-o-presente-nao-o-futuro-diz-diretor/" target="_blank" rel="noopener">https://www.poder360.com.br/midia/filmes-na-vertical-sao-o-presente-nao-o-futuro-diz-diretor/</a>. Acesso em: 24 out. 2026.</p>
+    <p>WANG, Yuxi; GUO, Jianfa. A narrative revolution in vertical framing: the aesthetics of “spatial compression” and multimodal reconstruction in vertical screen short dramas. <b>Journal of Media, Journalism & Communication Studies</b>, v. 1, n. 1, p. 18-28, 2025. Disponível em: <a href="https://ideas.repec.org/a/dba/jmjcsa/v1y2025i1p18-28.html" target="_blank" rel="noopener">https://ideas.repec.org/a/dba/jmjcsa/v1y2025i1p18-28.html</a>. Acesso em: 24 out. 2026.</p>
+  </div>
+  <p class="note">Dados de mercado, plataformas e Globoplay vieram de reportagens e relatórios de consultorias (Omdia, Media Partners Asia, Deloitte, Adjust, Seu Dinheiro, Pipoca Moderna, Fast Company Brasil, CartaCapital, entre outros). Confira a fonte original antes de citar em trabalho. O guia completo está no arquivo novelas-na-vertical.html.</p>
+</section>
 <footer class="foot">
   <div class="big">O que<br>ficou<br>em nós<small>Documentário · TCC · Publicidade e Propaganda</small></div>
   <div class="cols">
@@ -982,7 +913,7 @@ img,svg,canvas{-webkit-user-drag:none}
   }
 
   /* navegação lateral e topo */
-  var secs=[['pesquisa','Pesquisa'],['p-formato','O formato'],['p-aspecto','Horizontal x vertical'],['p-numeros','Números'],['p-origem','Origem'],['p-doc','Documentários'],['p-links','Links'],['p-fontes','Citações'],['p-porque','Por que 9:16'],['inicio','O filme'],['serie','Episódios'],['sobre','Sobre'],['pessoas','Pessoas'],['cronograma','Cronograma']];
+  var secs=[['p-case','O caso'],['p-formato','O formato'],['p-aspecto','Horizontal x vertical'],['p-numeros','Mercado'],['p-doc','Documentários'],['p-fontes','Fontes'],['p-porque','Decisão'],['sobre-filme','O filme'],['estrutura','Como é feito'],['serie','Episódios'],['pessoas','Pessoas'],['cronograma','Plano'],['p-refs','Referências']];
   var nav=document.createElement('nav');nav.className='dots';nav.setAttribute('aria-label','Seções');
   secs.forEach(function(s){if(!document.getElementById(s[0]))return;var a=document.createElement('a');a.href='#'+s[0];a.innerHTML='<b>'+s[1]+'</b>';a.dataset.id=s[0];nav.appendChild(a)});
   document.body.appendChild(nav);
@@ -1121,7 +1052,7 @@ img,svg,canvas{-webkit-user-drag:none}
     fold(li,[txt]);
   });
   /* notas */
-  $$('#pesquisa ~ section .note, #p-formato .note').forEach(function(n){
+  $$('#p-formato .note,#p-numeros .note,#p-fontes .note,#p-refs .note').forEach(function(n){
     if(n.closest('#p-fontes')===null||true){var b=document.createElement('button');b.className='nbtn';b.type='button';b.innerHTML='ⓘ Nota da pesquisa';
       b.onclick=function(){b.classList.toggle('open')};n.parentNode.insertBefore(b,n)}
   });
